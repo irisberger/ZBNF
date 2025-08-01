@@ -1,6 +1,7 @@
 # ZBNF
 This R code is associated with the paper:
 Berger, I., Kamble, A., Morton, O., Raj, V., Nair, S.R., Edwards, D.P., Wauchope, H.S., Joshi, V., Basu, P., Smith, B., and Dicks, L.V. (2025) "India's agroecology programme,'Zero Budget Natural Farming', delivers biodiversity and economic benefits without lowering yields" Nature Ecology & Evolution
+
 It was written by  Iris Berger. Please do not hesitate to direct any queries to irisberger1996@gmail.com
 The data used in the scripts is available via Zenodo: 10.5281/zenodo.16687021
 
