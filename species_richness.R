@@ -98,7 +98,7 @@ my_priors <- c(
 my_brm_richness_new2 <- brm(
   bf(spp_richness_cons_concern ~ site_type.x  +
        (1 | square_ID.x / point_ID)+
-       (offset(final_effArea)),
+       (offset(final_effArea)), ## final_effArea is on the log scale
      zi ~ site_type.x
   ),
   data = birds.i,
@@ -153,4 +153,5 @@ ggplot(summary_predictions, aes(x = site_type, y = median)) +
     panel.grid.minor = element_blank(),  # Remove minor grid lines
     axis.line.y = element_line(colour = "black"),  # Y-axis line color
     axis.line.x = element_line(colour = "black")  # X-axis line color
+
   )
