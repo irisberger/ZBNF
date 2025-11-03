@@ -89,7 +89,7 @@ my_brm <- brm(
   bf(CountVisit | weights(weights) ~ site_type * Trophic.Niche + ##site type is farming practice (ZBNF or agrichemical)
        (1 + site_type | name_latin) + ##name_latin is the species name
        (1 | square_ID / point_ID) +
-       (offset(effArea2)),
+       (offset(effArea2)), ##effArea2 is on the log scale
      zi ~ site_type + (1|name_latin)
   ),
   data = birds.h,
@@ -170,4 +170,5 @@ ggplot(niche.perc.diff1, aes(perc, reorder(Trophic.Niche, -perc), colour = Inter
   theme(axis.text.y = element_text(angle = 0, hjust = 1),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
+
         legend.position = "bottom")
