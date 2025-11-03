@@ -40,7 +40,7 @@ my_priors <- c(
 my_brm_forest <- brm(
   bf(CountVisit ~ 1+ Trophic.Niche * (zbnf + chem + zbnfyield + chemyield)+ elevation_scaled + temp_scaled +
        (1 + zbnf + chem + zbnfyield + chemyield | name_latin) 
-     + (1 | square_ID/point_ID) + (offset(effArea2)),
+     + (1 | square_ID/point_ID) + (offset(effArea2)), ##effArea2 is on the log scale
      zi ~ zbnf + chem + (1 | name_latin)
   ),
   data = birds1,
@@ -316,4 +316,5 @@ ggplot(yield_percent_chem_niche, aes(perc_diff, reorder(Trophic.Niche, -perc_dif
   coord_cartesian(xlim = c(-100, 500))+
   theme_bw() +
   labs(x = "Percentage change in abundance with increasing yield", y = "Trophic Niche", title = "Effect of yield by farming practice")
+
 
