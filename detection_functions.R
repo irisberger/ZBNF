@@ -2134,4 +2134,7 @@ data.sum3 <- data.sum2 %>%
 unique(data.sum2$name_latin)
 unique(data.sum2$point_ID) ##all fine
 
+data.sum3$effArea <- log(data.sum3$effArea) ##effective area surveyed needs to be on the log scale for the subsequent count models. Thus, log-transform here (or later)
+
 save(data.sum3, file = "density_data_fitted_only.csv")
+
